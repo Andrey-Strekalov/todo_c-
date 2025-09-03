@@ -9,7 +9,7 @@ namespace ToDo;
 public class MyTask
 {
     private int id;
-    private bool comleted;
+    public bool completed;
     private string taskContent;
 
     public MyTask(int id, string taskContent, bool completed)
@@ -17,7 +17,7 @@ public class MyTask
 
         this.id = id;
         this.taskContent = taskContent;
-        this.comleted = completed;
+        this.completed = completed;
     }
 
     public int Id
@@ -28,8 +28,8 @@ public class MyTask
 
     public bool Comleted
     {
-        get { return this.comleted; }
-        set { this.comleted = value; }
+        get { return this.completed; }
+        set { this.completed = value; }
     }
 
     public string TaskContent
@@ -40,6 +40,6 @@ public class MyTask
 
     public void printTask()
     {
-        Console.WriteLine($"#{this.id}    {this.taskContent}    {this.comleted}");
+        Console.WriteLine($"#{this.id}    {this.taskContent}    {(this.completed ? "выполнено":"не выполнено")}");
     }
 }
